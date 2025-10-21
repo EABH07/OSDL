@@ -119,7 +119,7 @@ const d = {
                        "id": 79997992,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=s76vL2NZkLM&pp=0gcJCfwJAYcqIYzv",
+                       "verificationVid": "https://www.youtube.com/watch?v=s76vL2NZkLM",
                        "key": 7
 		},
 						/*=================================================================================*/
@@ -481,7 +481,7 @@ const d = {
                        "id": 10565740,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=gibXHOdh3oM&pp=0gcJCfwJAYcqIYzv",
+                       "verificationVid": "https://www.youtube.com/watch?v=gibXHOdh3oM",
                        "key": 29
 		},
 				/*=================================================================================*/
@@ -509,7 +509,7 @@ const d = {
                        "id": 96383314,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=VxzdiYAY23Q",
+                       "verificationVid": "https://www.youtube.com/watch?v=OMgE4GH9fK8",
                        "legacykey": 0
 		},
 						/*=================================================================================*/
@@ -523,7 +523,7 @@ const d = {
                        "id": 73005068,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=VxzdiYAY23Q",
+                       "verificationVid": "Hola",
                        "legacykey": 0
 		},
 						/*=================================================================================*/
@@ -749,4 +749,5 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
+
 
