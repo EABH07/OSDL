@@ -119,7 +119,7 @@ const d = {
                        "id": 79997992,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=s76vL2NZkLM",
+                       "verificationVid": "https://www.youtube.com/watch?v=s76vL2NZkLM&pp=0gcJCfwJAYcqIYzv",
                        "key": 7
 		},
 						/*=================================================================================*/
@@ -481,7 +481,7 @@ const d = {
                        "id": 10565740,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=gibXHOdh3oM",
+                       "verificationVid": "https://www.youtube.com/watch?v=gibXHOdh3oM&pp=0gcJCfwJAYcqIYzv",
                        "key": 29
 		},
 				/*=================================================================================*/
@@ -509,7 +509,7 @@ const d = {
                        "id": 96383314,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=OMgE4GH9fK8",
+                       "verificationVid": "https://www.youtube.com/watch?v=VxzdiYAY23Q",
                        "legacykey": 0
 		},
 						/*=================================================================================*/
@@ -523,7 +523,7 @@ const d = {
                        "id": 73005068,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "Hola",
+                       "verificationVid": "https://www.youtube.com/watch?v=VxzdiYAY23Q",
                        "legacykey": 0
 		},
 						/*=================================================================================*/
@@ -723,6 +723,12 @@ const d = {
 				       "percent": 100,
 				       "hz": "??hz"
 					},
+					{
+				       "user": "Tsksaid",
+				       "link": "https://youtu.be/ITabuRQgE14?si=7ZhzSeZPxKpX36HK",
+				       "percent": 100,
+				       "hz": "60hz"
+					},
 			],
 			"name": "Acu",
                        "author": "EABH",
@@ -749,5 +755,7 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
+
+
 
 
