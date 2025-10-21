@@ -518,7 +518,7 @@ const d = {
 				
 			],
 			"name": "Sunburn",
-                       "author": "NachTrax	",
+                       "author": "NachTrax",
                        "more": "none",
                        "id": 73005068,
                        "pass": "Free to copy",
@@ -749,3 +749,4 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
+
