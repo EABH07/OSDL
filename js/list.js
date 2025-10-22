@@ -572,6 +572,26 @@ const d = {
                        "legacykey": 0
 		},
 						/*=================================================================================*/
+						
+		{
+			"vids": [
+					{
+				       "user": "7 meses",
+				       "link": "https://youtu.be/bc7Cum9ahtA",
+				       "percent": 100,
+				       "hz": "60hz"
+					},
+			],
+			"name": "Forbidden isle",
+                       "author": "EABH",
+                       "more": "none",
+                       "id": 63775846,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=WTJjRAPFiFo",
+                       "legacykey": 0
+		},
+						/*=================================================================================*/
 		{
 			"vids": [
 					{
@@ -755,7 +775,3 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
-
-
-
-
