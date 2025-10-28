@@ -306,6 +306,12 @@ const d = {
 		{
 			"vids": [
 					{
+				       "user": "DavidBrawls",
+				       "link": "https://youtu.be/3FIDKlmA6mE",
+				       "percent": 100,
+				       "hz": "165hz"
+					},
+					{
 				       "user": "NineGhost21",
 				       "link": "https://www.youtube.com/watch?v=ykUsh0GiATs",
 				       "percent": 100,
