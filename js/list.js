@@ -355,6 +355,20 @@ const d = {
                        "verificationVid": "https://www.youtube.com/watch?v=5EXCtQSu994",
                        "key": 21
 		},
+		/*=================================================================================*/
+		{
+			"vids": [
+				
+			],
+			"name": "Darkened",
+                       "author": "DavidBrawls",
+                       "more": "none",
+                       "id": 66085306,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/4DmnTj0myNw",
+                       "key": 22
+		},
 /*=================================================================================*/
 		{
 			"vids": [
@@ -367,7 +381,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=USRjl1yDjQ8",
-                       "key": 22
+                       "key": 23
 		},
 /*=================================================================================*/
 		{
@@ -381,7 +395,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=xjJnDJeceX8",
-                       "key": 23
+                       "key": 24
 		},
 /*=================================================================================*/
 		{
@@ -395,7 +409,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=8fhzKk5akqU",
-                       "key": 24
+                       "key": 25
 		},
 /*=================================================================================*/
 		{
@@ -409,7 +423,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=wlxu1zMkfwo",
-                       "key": 25
+                       "key": 26
 		},
 /*=================================================================================*/
 		{
@@ -423,7 +437,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=fKB10b9G_D8",
-                       "key": 26
+                       "key": 27
 		},
 /*=================================================================================*/
 		{
@@ -437,7 +451,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=OLmhAGWMmP4",
-                       "key": 27
+                       "key": 28
 		},
 		/*=================================================================================*/
 		{
@@ -451,7 +465,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=jYCQROOEQRE",
-                       "key": 28
+                       "key": 29
 		},
 		/*=================================================================================*/
 		{
@@ -488,7 +502,7 @@ const d = {
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=gibXHOdh3oM&pp=0gcJCfwJAYcqIYzv",
-                       "key": 29
+                       "legacykey": 0
 		},
 				/*=================================================================================*/
 		{
