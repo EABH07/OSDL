@@ -195,7 +195,7 @@ const d = {
 /*=================================================================================*/
 		{
 			"vids": [
-				
+					
 			],
 			"name": "Quantum Processing",
                        "author": "DavidBrawls",
@@ -210,7 +210,13 @@ const d = {
 /*=================================================================================*/
 		{
 			"vids": [
-				
+					
+					{
+				       "user": "7 meses",
+				       "link": "https://youtu.be/vcsaS0jjlMA",
+				       "percent": 100,
+				       "hz": "CBF"
+					},
 			],
 			"name": "Auditory Breaker",
                        "author": "Ender",
