@@ -535,7 +535,7 @@ const d = {
                        "id": 96383314,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=VxzdiYAY23Q",
+                       "verificationVid": "https://youtu.be/OMgE4GH9fK8",
                        "legacykey": 0
 		},
 						/*=================================================================================*/
@@ -801,3 +801,4 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
+
