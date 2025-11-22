@@ -541,7 +541,12 @@ const d = {
 						/*=================================================================================*/
 		{
 			"vids": [
-				
+					{
+				       "user": "DavidBrawls",
+				       "link": "https://youtu.be/NIXJSKXrdvI?si=EJKdWIYG4AyYbPMM",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
 			],
 			"name": "Sunburn",
                        "author": "NachTrax",
@@ -549,7 +554,7 @@ const d = {
                        "id": 73005068,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=VxzdiYAY23Q",
+                       "verificationVid": "https://youtu.be/CdXTQTo9A34?si=pyIiHiMJuXdn9hwU",
                        "legacykey": 0
 		},
 						/*=================================================================================*/
@@ -769,12 +774,7 @@ const d = {
 				       "percent": 100,
 				       "hz": "??hz"
 					},
-					{
-				       "user": "Tsksaid",
-				       "link": "https://youtu.be/ITabuRQgE14?si=7ZhzSeZPxKpX36HK",
-				       "percent": 100,
-				       "hz": "60hz"
-					},
+					
 			],
 			"name": "Acu",
                        "author": "EABH",
@@ -801,4 +801,3 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
-
