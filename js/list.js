@@ -323,6 +323,12 @@ const d = {
 				       "percent": 100,
 				       "hz": "??hz"
 					},
+				{
+				       "user": "ImShadow",
+				       "link": "https://www.youtube.com/watch?v=KOYP70XC-Xg",
+				       "percent": 100,
+				       "hz": "60hz"
+					},
 			],
 			"name": "Athanatos",
                        "author": "Froxx",
@@ -815,4 +821,5 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
+
 
