@@ -323,7 +323,7 @@ const d = {
 				       "percent": 100,
 				       "hz": "??hz"
 					},
-				{
+					{
 				       "user": "ImShadow",
 				       "link": "https://www.youtube.com/watch?v=KOYP70XC-Xg",
 				       "percent": 100,
@@ -506,6 +506,12 @@ const d = {
 				       "percent": 100,
 				       "hz": "??hz"
 					},
+					{
+				       "user": "7 meses",
+				       "link": "https://youtu.be/efk5rMKSViw",
+				       "percent": 60,
+				       "hz": "??hz"
+					},
 			],
 			"name": "Bloodbath",
                        "author": "EABH",
@@ -517,20 +523,6 @@ const d = {
                        "legacykey": 0
 		},
 				/*=================================================================================*/
-		{
-			"vids": [
-				
-			],
-			"name": "Overtime",
-                       "author": "Rumble",
-                       "more": "none",
-                       "id": 83825373,
-                       "pass": "Free to copy",
-                       "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=oacu3dMCtEk&t=16s",
-                       "legacykey": 0
-		},
-		        /*=================================================================================*/
 		{
 			"vids": [
 				
@@ -821,5 +813,3 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
-
-
