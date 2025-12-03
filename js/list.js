@@ -509,8 +509,8 @@ const d = {
 					{
 				       "user": "7 meses",
 				       "link": "https://youtu.be/efk5rMKSViw",
-				       "percent": 60,
-				       "hz": "??hz"
+				       "percent": 100,
+				       "hz": "CBF"
 					},
 			],
 			"name": "Bloodbath",
@@ -519,13 +519,18 @@ const d = {
                        "id": 10565740,
                        "pass": "Free to copy",
                        "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=gibXHOdh3oM&pp=0gcJCfwJAYcqIYzv",
+                       "verificationVid": "https://youtu.be/gibXHOdh3oM",
                        "legacykey": 0
 		},
 				/*=================================================================================*/
 		{
 			"vids": [
-				
+					{
+				       "user": "7 meses",
+				       "link": "https://youtu.be/1YsGvHSDzHw?si=oAiizGc66B6EblPG",
+				       "percent": 100,
+				       "hz": "CBF"
+					},
 			],
 			"name": "Heartbeat",
                        "author": "OsiriZSH",
