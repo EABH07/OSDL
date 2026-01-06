@@ -1,5 +1,4 @@
-const d = {
-	"list": [
+var list = [
 		/*=================================================================================*/
 		{
 			"vids": [
@@ -605,7 +604,7 @@ const d = {
 					},
 					{
 				       "user": "NachTrax",
-				       "link": "hola",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
 				       "percent": 100,
 				       "hz": "??hz"
 					},
@@ -769,9 +768,9 @@ const d = {
 						/*=================================================================================*/
 		{
 			"vids": [
-					{
+				{
 				       "user": "Nani",
-				       "link": "hola",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
 				       "percent": 100,
 				       "hz": "??hz"
 					},
@@ -801,42 +800,29 @@ const d = {
 					},
 					{
 				       "user": "7 meses",
-				       "link": "hola",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
 				       "percent": 100,
 				       "hz": "??hz"
 					},
-					{
+{
 				       "user": "NachTrax",
-				       "link": "hola",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
 				       "percent": 100,
-				       "hz": "??hz"
-					},
-					
+				       "hz": "60hz"
+					}
 			],
 			"name": "Acu",
-                       "author": "EABH",
-                       "more": "none",
-                       "id": 61079355,
-                       "pass": "Free to copy",
-                       "percentToQualify": 100,
-                       "verificationVid": "https://www.youtube.com/watch?v=Po5K8TincqU",
-                       "legacykey": 0
-		},
-						/*=================================================================================*/
+			"author": "EABH",
+			"more": "none",
+			"id": 61079355,
+			"pass": "Free to copy",
+			"percentToQualify": 100,
+			"verificationVid": "https://www.youtube.com/watch?v=Po5K8TincqU",
+			"legacykey": 0 
+		}
 		
-		
-		
+];
 
 
-
-	],
-	"version": [
-		1,
-		0,
-		0
-	]
-};
-
-const list = d.list;const version = d.version;
 
 
