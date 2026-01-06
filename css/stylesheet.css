@@ -1,164 +1,154 @@
-*{
-  font-family: 'Mukta Mahee', sans-serif;
-  color: black !important;
-}
-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: rgb(200, 200, 200);
-}
-#sitename{
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  font-size: 2em;
+:root {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --text: #212529;
+    --accent: #3498db;
+    --border: #dee2e6;
 }
 
-#pc-link{
-  position: fixed;
-  text-align: right;
-  top: 35px;
-  right: 30px;
-  font-size: 1.3em;
-}
-#list{
-  background: rgb(220, 220, 220);
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 30%;
-  overflow-y: auto;
-}
-#additional-information{
-  background: rgb(220, 220, 220);
-  position: fixed;
-  top: 100px;
-  right: 0;
-  width: 30%;
-  overflow-y: auto;
-}
-#info{
-  background: rgb(235, 235, 235);
-  position: fixed;
-  top: 100px;
-  left: 30%;
-  width: 40%;
-  overflow-y: auto;
-}
-#inner-info, #inner-right-info{
-  padding: 1em;
-}
-.entry{
-  padding: 1em;
-
-}
-.entry:nth-child(odd){
-  background: rgb(228, 228, 228);
-}
-.entry:hover{
-  background: rgb(202, 202, 202);
-  cursor: pointer;
-  color:rgba(0, 0, 0,0.5) !important;
+[data-theme='dark'] {
+    --bg: #121212;
+    --surface: #1e1e1e;
+    --text: #e0e0e0;
+    --accent: #5dade2;
+    --border: #333333;
 }
 
-A:hover {color:rgba(0, 0, 0,0.5) !important; text-decoration:none; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Mukta Mahee', sans-serif; color: var(--text); }
 
-.selected{
-  background: rgb(190, 190, 190) !important;
-}
-.author{
-  font-variant: small-caps;
-}
-#levelname{
-  font-size: 1.7em;
-  font-weight: bold;
+body { background-color: var(--bg); overflow: hidden; height: 100vh; }
 
-}
-#levelauthor{
-  font-size: 1.1em;
-}
-#leveldescription{
-  font-size: 0.8em;
-  font-variant: small-caps;
-
-}
-.vid{
-  width: 100%;
-}
-#records{
-  width: 100%;
-}
-#records-title{
-  font-size: 1.5em;
-  font-weight: bold;
-  color: black;
-}
-#records-table{
-  width: 100%;
-}
-#explanation-simple-title{
-  font-size: 1.5em;
-  font-weight: bold;
-  color: black;
-}
-#explanation-simple{
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
-}
-.interentry{
-  width: 100%;
-  padding: 0.5em;
-}
-.record-entry:nth-child(even){
-  background: rgb(231, 231, 231)
-}
-.record-entry:nth-child(odd){
-  background: rgb(224, 224, 224)
-}
-#block{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  color: black;
-  font-size: 3em;
-}
-.hacked{
-  background: red;
-  color: white;
-  font-weight: strong;
-  font-size: 0.4em;
-  padding: 0.4em;
-  border-radius: 1em;
-}
-.p-hacked{
-  background: rgb(255, 127, 127);
-  color: white;
-  font-weight: strong;
-  font-size: 0.4em;
-  padding: 0.4em;
-  border-radius: 1em;
-}
-#hi{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  z-index: 99;
-}
-#user-rank {
-  font-size: 20px;
-  font-weight: bold;
+header {
+    height: 70px; background: var(--surface); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; padding: 0 20px; position: fixed; top: 0; width: 100%; z-index: 1000;
 }
 
-Swal {
-  color: black;
+.header-content { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+.logo-text { font-weight: 800; font-size: 24px; color: var(--accent); }
+
+#levelSearch {
+    padding: 8px 15px; border-radius: 20px; border: 1px solid var(--border);
+    background: var(--bg); width: 250px; outline: none;
+}
+
+.nav-btn { background: none; border: none; padding: 10px; cursor: pointer; font-weight: bold; opacity: 0.6; }
+.nav-btn.active { opacity: 1; border-bottom: 2px solid var(--accent); }
+
+.btn-request {
+    background: var(--accent); color: white !important; padding: 8px 15px;
+    border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 13px;
+}
+
+.theme-btn { background: none; border: none; cursor: pointer; font-size: 20px; }
+
+.page { display: none; margin-top: 70px; height: calc(100vh - 70px); }
+.page.active { display: block; }
+
+#main-container { display: flex; height: 100%; }
+
+#list {
+    width: 320px; height: 100%; overflow-y: auto; background: var(--surface);
+    border-right: 1px solid var(--border);
+}
+
+.entry { padding: 20px; border-bottom: 1px solid var(--border); cursor: pointer; }
+.entry:hover { background: rgba(0,0,0,0.05); }
+.selected { background: var(--accent) !important; }
+.selected * { color: white !important; }
+
+#info { flex: 1; padding: 40px; overflow-y: auto; }
+
+#levelname { font-size: 40px; font-weight: 800; }
+#levelauthor { font-size: 20px; opacity: 0.7; margin-bottom: 20px; }
+
+.container-leaderboard { max-width: 800px; margin: 0 auto; padding: 40px; }
+
+.record-entry { 
+    background: var(--surface); padding: 15px; border-radius: 10px; 
+    margin-bottom: 10px; border: 1px solid var(--border); 
+}
+
+iframe, .vid { width: 100%; aspect-ratio: 16/9; border-radius: 10px; border: none; }
+.container-leaderboard {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#leaderboard-list {
+    display: grid;
+    gap: 10px;
+}
+
+/* Estilo para las entradas de records que genera tu JS */
+.record-entry {
+    background: var(--surface);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s;
+}
+
+.record-entry:hover {
+    transform: translateY(-2px);
+}
+/* Busca y elimina cualquier "color: black !important" general */
+.entry p {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.entry small {
+    display: block;
+    opacity: 0.7;
+}
+#list div[style*="font-weight:bold"] {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+/* Reducir tamaño del video */
+.vid {
+    width: 80%; /* Antes era 100% */
+    aspect-ratio: 16 / 9;
+    margin: 10px auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Estilo para el panel de reglas (derecha) */
+#additional-information {
+    padding: 20px;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+}
+
+.rule-item {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.rule-title {
+    font-weight: bold;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 5px;
+}
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-btn.active {
+    background: #ff4d4d; /* Rojo vibrante para el botón activo */
+    border-color: #ff4d4d;
 }
