@@ -398,14 +398,13 @@ const d = {
 /*=================================================================================*/
 		{
 		"vids": [
-				
-			],	
+			    {
 				       "user": "Ramxzs507",
 				       "link": "https://youtu.be/wwszfxZHqGo?si=BaT45GMdlfs1lw_R",
 				       "percent": 100,
 				       "hz": "160hz"
-					},
-		{
+				},
+		 ],
 			
 			"name": "Blade of Justice",
                        "author": "NineGhost21",
@@ -839,4 +838,5 @@ const d = {
 };
 
 const list = d.list;const version = d.version;
+
 
