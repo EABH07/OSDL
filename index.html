@@ -1,89 +1,80 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSDL</title>
     <link href="//fonts.googleapis.com/css?family=Mukta+Mahee:200,400,700" rel="stylesheet">
     <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-        /* Contenedor del Leaderboard con Scroll */
-        #leaderboard-list {
-            max-height: 70vh; /* Altura máxima (70% de la pantalla) */
-            overflow-y: auto; /* Activa el scroll vertical */
-            padding-right: 10px;
-        }
+<style>
+/* BASES */
+body, html { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
 
-        /* Estilo para las tarjetas de usuario */
-        .user-card {
-            transition: transform 0.2s ease;
-            background: #222; /* Ajusta según tu tema */
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
-
-        .user-card:hover {
-            transform: scale(1.01);
-            background: #2a2a2a;
-        }
-
-        /* Barra de scroll personalizada */
-        #leaderboard-list::-webkit-scrollbar {
-            width: 8px;
-        }
-        #leaderboard-list::-webkit-scrollbar-thumb {
-            background: var(--accent, #3498db);
-            border-radius: 10px;
-        }
-        #leaderboard-list::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.05);
-        }
-		header {
-    background: linear-gradient(90deg, #1a1a1a 0%, #8b0000 100%);
-    padding: 15px 0;
-    border-bottom: 3px solid #ff4d4d;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
+/* ESTRUCTURA PC */
+#main-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    height: calc(100vh - 88px); /* Ajuste para que no sobre espacio */
 }
 
-/* Estilo para el nuevo botón de Discord */
-.discord-btn {
-    background: #5865F2; /* Color oficial de Discord */
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.9em;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: none;
-    cursor: pointer;
+#list {
+    width: 350px;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid rgba(255,255,255,0.1);
 }
 
-.discord-btn:hover {
-    background: #4752c4;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+#info {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
 }
-body, header, .page, .user-card, #info {
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+/* RESPONSIVE MÓVIL (Aquí está la solución) */
+@media (max-width: 800px) {
+    header { padding: 10px 0; }
+    .header-content { flex-direction: column; gap: 10px; }
+    .header-actions { flex-wrap: wrap; justify-content: center; }
+    
+    #main-container {
+        display: block !important; /* Rompe la fila de PC */
+        height: auto !important;
+    }
+
+    #list {
+        width: 100% !important;
+        height: 300px !important; /* Altura de la lista arriba */
+        border-right: none;
+        border-bottom: 2px solid #ff4d4d;
+    }
+
+    #info {
+        width: 100% !important;
+        display: block !important;
+        padding: 15px !important;
+        box-sizing: border-box; /* Evita que se salga de la pantalla */
+    }
+
+    iframe.vid {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #metadata {
+        grid-template-columns: 1fr 1fr !important; /* 2 columnas en móvil */
+    }
 }
-    </style>
+
+/* OTROS ESTILOS */
+#leaderboard-list { max-height: 70vh; overflow-y: auto; padding-right: 10px; }
+.user-card { transition: transform 0.2s ease; background: #222; margin-bottom: 10px; border-radius: 8px; }
+.user-card:hover { transform: scale(1.01); background: #2a2a2a; }
+header { background: linear-gradient(90deg, #1a1a1a 0%, #8b0000 100%); border-bottom: 3px solid #ff4d4d; position: sticky; top: 0; z-index: 1000; }
+.header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+.discord-btn { background: #5865F2; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
+body, header, .page, .user-card, #info { transition: background-color 0.3s ease, color 0.3s ease; }
+</style>
 </head>
 
 <body>
@@ -184,15 +175,21 @@ body, header, .page, .user-card, #info {
 
     // 2. NAVEGACIÓN
     function showPage(pageId, btn) {
-        $('.page').removeClass('active');
-        $('.nav-btn').removeClass('active');
-        $('#' + pageId).addClass('active');
-        $(btn).addClass('active');
-        
-        if (pageId === 'leaderboard-content') {
-            renderLeaderboard();
-        }
+    // 1. Ocultar todas las páginas
+    $('.page').removeClass('active-page').hide();
+    
+    // 2. Mostrar solo la seleccionada
+    $('#' + pageId).addClass('active-page').show();
+    
+    // 3. Manejar los botones
+    $('.nav-btn').removeClass('active');
+    $(btn).addClass('active');
+
+    // 4. Si entramos al Leaderboard, renderizarlo
+    if (pageId === 'leaderboard-content') {
+        renderLeaderboard();
     }
+}
 
     // 3. RENDERIZAR LEADERBOARD
 function renderLeaderboard() {
@@ -294,126 +291,141 @@ function renderLeaderboard() {
     });
 }
 
-    function load(index) {
+function load(index) {
+    if (typeof list === 'undefined' || !list[index]) return;
     const entry = list[index];
-    if (!entry) return;
 
     $('.entry').removeClass('selected');
     $(`.entry[data-id="${index}"]`).addClass('selected');
 
-    // 1. Datos básicos
-    $('#levelname').text(entry.name);
+    // 1. Datos básicos (Eliminamos márgenes que empujan hacia arriba)
+    $('#levelname').text(entry.name).css('margin-top', '0');
     $('#levelauthor').text('by ' + entry.author);
     
-    // 2. Video de Verificación
-    $('#vids').empty();
-    // Dentro de la función load(index)...
-if (entry.verificationVid) {
-    let vidUrl = entry.verificationVid.replace("watch?v=", "embed/").replace("youtu.be/", "youtube.com/embed/").split('&')[0];
-    $('#vids').empty().append(`
-        <iframe src="${vidUrl}" 
-            frameborder="0" 
-            allowfullscreen 
-            class="vid" 
-            style="width: 100%; max-width: 1150px; aspect-ratio: 16/9; border-radius: 12px; display: block; margin: 0 auto 25px auto; box-shadow: 0 8px 20px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1);">
-        </iframe>
-    `);
-}
+    // 2. Video de Verificación Unificado
+    const vidsContainer = $('#vids');
+    vidsContainer.empty();
 
-    // 3. NUEVA SECCIÓN: Información Técnica (ID, Puntos, Porcentaje)
-    // Calculamos los puntos en tiempo real
-    const rank = (entry.key !== undefined) ? entry.key : 151; // Si es legacy, rank alto para 0 pts
-    const points = rank <= 150 ? roundNumber(getUserPoint(rank, 100, 100), 2) : 0;
+    if (entry.verificationVid) {
+        let vidUrl = entry.verificationVid
+            .replace("watch?v=", "embed/")
+            .replace("youtu.be/", "youtube.com/embed/")
+            .split('&')[0];
+
+        // Usamos un max-width de 1100px para que en PC se vea grande y profesional
+        vidsContainer.append(`
+            <div style="width: 100%; display: flex; justify-content: center; margin-top: 0;">
+                <iframe src="${vidUrl}" 
+                    frameborder="0" 
+                    allowfullscreen 
+                    class="vid" 
+                    style="width: 100%; max-width: 1100px; aspect-ratio: 16/9; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
+                </iframe>
+            </div>
+        `);
+    }
+
+    // 3. Información Técnica
+    const rank = (entry.key !== undefined) ? entry.key : 151;
+    const points = (typeof getUserPoint === 'function' && rank <= 150) ? roundNumber(getUserPoint(rank, 100, 100), 2) : 0;
 
     $('#metadata').empty().html(`
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin: 10px 0; font-size: 0.9em;">
-            <div><strong>ID:</strong> <span style="color: var(--accent);">${entry.id || 'N/A'}</span></div>
-            <div><strong>Puntos:</strong> <span style="color: var(--accent);">${points} pts</span></div>
-            <div><strong>percentToQualify:</strong> <span style="color: var(--accent);">${entry.percentToQualify || 100}%</span></div>
-            <div><strong>Password:</strong> <span style="color: var(--accent);">${entry.pass || 'Free'}</span></div>
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; text-align: center;">
+            <div><small style="opacity:0.5; display:block; text-transform:uppercase; font-size:10px;">ID</small><b>${entry.id || 'N/A'}</b></div>
+            <div><small style="opacity:0.5; display:block; text-transform:uppercase; font-size:10px;">Puntos</small><b>${points} pts</b></div>
+            <div><small style="opacity:0.5; display:block; text-transform:uppercase; font-size:10px;">Corte</small><b>${entry.percentToQualify || 100}%</b></div>
+            <div><small style="opacity:0.5; display:block; text-transform:uppercase; font-size:10px;">Password</small><b>${entry.pass || 'Free'}</b></div>
         </div>
     `);
 
-    // 4. Récords de jugadores
+    // 4. Récords
     const record_node = $('#records');
     if (record_node.length) {
-        record_node.empty().append('<h3 style="margin-top:20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom:10px;">Récords</h3>');
+        record_node.empty().append('<h3 style="text-align:center; margin: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom:10px; max-width:1100px; margin-left:auto; margin-right:auto;">Récords</h3>');
+        let html = '<div style="max-width: 1100px; margin: 0 auto;">';
         if (entry.vids && entry.vids.length > 0) {
             entry.vids.forEach(r => {
-                $(`<div style="padding:8px 0; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.02);">
-                    <span><a href="${r.link}" target="_blank" style="text-decoration:none; color:inherit;"><strong>${r.user}</strong></a></span>
-                    <span style="opacity:0.8;">${r.percent}% (${r.hz || '60hz'})</span>
-                </div>`).appendTo(record_node);
+                html += `
+                <div style="display:flex; justify-content:space-between; padding:10px; border-bottom:1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); margin-bottom:4px; border-radius:6px;">
+                    <a href="${r.link}" target="_blank" style="color:#3498db; text-decoration:none; font-weight:bold;">${r.user}</a>
+                    <span>${r.percent}% (${r.hz || '60Hz'})</span>
+                </div>`;
             });
         } else {
-            record_node.append('<p style="opacity:0.5; padding: 10px 0;">No hay récords registrados aún.</p>');
+            html += '<p style="text-align:center; opacity:0.5;">No hay récords registrados aún.</p>';
         }
+        html += '</div>';
+        record_node.append(html);
     }
 }
 
-    // 5. INICIALIZACIÓN
-    $(document).ready(function() {
-        if (typeof list !== 'undefined') {
-            const listContainer = $('#list');
-			
-			const savedTheme = localStorage.getItem('theme') || 'dark'; // 'dark' por defecto
-			$('html').attr('data-theme', savedTheme);
-			$('#theme-toggle').text(savedTheme === 'dark' ? '🌙' : '☀️');
-            
-            // Sección List
-            listContainer.append('<div style="padding:10px; font-weight:bold; background:var(--surface);">List</div>');
-            list.forEach((entry, index) => {
-                if (entry.hasOwnProperty('key')) {
-                    $(`<div class="entry" data-id="${index}">
-                        <p>#${entry.key + 1} ${entry.name}</p>
-                        <small>${entry.author}</small>
-                    </div>`).appendTo(listContainer);
-                }
-            });
-
-            // Sección Legacy
-            listContainer.append('<div style="padding:10px; font-weight:bold; background:#333; color:white;">Legacy List</div>');
-            list.forEach((entry, index) => {
-                if (entry.hasOwnProperty('legacykey')) {
-                    $(`<div class="entry" data-id="${index}" style="opacity:0.7;">
-                        <p>${entry.name}</p>
-                        <small>${entry.author}</small>
-                    </div>`).appendTo(listContainer);
-                }
-            });
-            
-            load(0);
-        }
-
-        // Buscador
-        $('#levelSearch').on('input', function() {
-            let val = $(this).val().toLowerCase();
-            $('.entry[data-id]').each(function() {
-                $(this).toggle($(this).text().toLowerCase().includes(val));
-            });
+// 5. INICIALIZACIÓN
+$(document).ready(function() {
+    if (typeof list !== 'undefined') {
+        const listContainer = $('#list');
+        
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        $('html').attr('data-theme', savedTheme);
+        $('#theme-toggle').text(savedTheme === 'dark' ? '🌙' : '☀️');
+        
+        listContainer.append('<div style="padding:15px; font-weight:bold; background:rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.1);">List</div>');
+        
+        list.forEach((entry, index) => {
+            if (entry.hasOwnProperty('key')) {
+                $(`<div class="entry" data-id="${index}">
+                    <p>#${entry.key + 1} ${entry.name}</p>
+                    <small>${entry.author}</small>
+                </div>`).appendTo(listContainer);
+            }
         });
 
-        // Click en niveles
-        $(document).on('click', '.entry[data-id]', function() {
-            load($(this).data('id'));
+        listContainer.append('<div style="padding:15px; font-weight:bold; background:rgba(0,0,0,0.3); border-bottom:1px solid rgba(255,255,255,0.1);">Legacy List</div>');
+        
+        list.forEach((entry, index) => {
+            if (entry.hasOwnProperty('legacykey')) {
+                $(`<div class="entry" data-id="${index}" style="opacity:0.7;">
+                    <p>${entry.name}</p>
+                    <small>${entry.author}</small>
+                </div>`).appendTo(listContainer);
+            }
         });
+        
+        load(0);
+    }
 
-        // Modo Oscuro
-        // Modo Oscuro con Memoria
-$('#theme-toggle').click(function() {
-    const currentTheme = $('html').attr('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    // Aplicar el nuevo tema
-    $('html').attr('data-theme', newTheme);
-    
-    // Guardar en la memoria del navegador
-    localStorage.setItem('theme', newTheme);
-    
-    // Cambiar el icono del botón
-    $(this).text(newTheme === 'dark' ? '🌙' : '☀️');
-});
+    // Buscador
+    $('#levelSearch').on('input', function() {
+        let val = $(this).val().toLowerCase();
+        $('.entry[data-id]').each(function() {
+            $(this).toggle($(this).text().toLowerCase().includes(val));
+        });
     });
+
+    // Click en niveles
+    $(document).on('click', '.entry[data-id]', function() {
+        load($(this).data('id'));
+    });
+
+    // Toggle Tema
+    $('#theme-toggle').click(function() {
+        const currentTheme = $('html').attr('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        $('html').attr('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        $(this).text(newTheme === 'dark' ? '🌙' : '☀️');
+    });
+	// Al final de la función load(index)
+if (window.innerWidth <= 800) {
+    const infoElement = document.getElementById('info');
+    if (infoElement) {
+        // Usamos offset para que no quede tan pegado arriba al bajar
+        window.scrollTo({
+            top: infoElement.offsetTop - 10, 
+            behavior: 'smooth'
+        });
+    }
+}
+});
 </script>
 </body>
 </html>
