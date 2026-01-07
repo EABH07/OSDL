@@ -60,6 +60,35 @@ var list = [
 			"vids": [
 				
 			],
+			"name": "Eternal Moment",
+                       "author": "DavidBrawls",
+                       "more": "none",
+                       "id": 59539361,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=QinPYllvHxs&t=36s",
+                       "key": 4
+		},
+						/*=================================================================================*/
+		{
+			"vids": [
+				
+			],
+			"name": "RANDOM ACCESS MEMORY",
+                       "author": "Ramxzs507",
+                       "more": "none",
+                       "id": 81372683,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/bTx2vZ-OeKM?si=cmsaUKvmoi6QNIaV",
+                       "key": 5
+		},
+						/*=================================================================================*/
+
+		{
+			"vids": [
+				
+			],
 			"name": "Wasureta",
                        "author": "Froxx",
                        "more": "none",
@@ -67,7 +96,22 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=lC9gfqxljT8",
-                       "key": 4
+                       "key": 6
+		},
+						/*=================================================================================*/
+
+		{
+			"vids": [
+				
+			],
+			"name": "Sonic wave rebirth",
+                       "author": "7 meses",
+                       "more": "none",
+                       "id": 68688849,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/C5GaCzLt1yM",
+                       "key": 7
 		},
 						/*=================================================================================*/
 		{
@@ -78,6 +122,12 @@ var list = [
 				       "percent": 100,
 				       "hz": "CBF"
 			    },
+				{
+				       "user": "Ender",
+				       "link": "https://youtu.be/4iBb8lTLjxM?si=2YGJnPHE8-wUG-1k",
+				       "percent": 100,
+				       "hz": "240"
+			    },
 			],
 			"name": "Sonic Wave",
                        "author": "Mikupan91",
@@ -86,7 +136,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=NXv7ZfYQ1Sg",
-                       "key": 5
+                       "key": 8
 		},
 						/*=================================================================================*/
 		{
@@ -105,7 +155,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=28Hv2z5r5gY",
-                       "key": 6
+                       "key": 9
 		},
 						/*=================================================================================*/
 		{
@@ -119,7 +169,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=s76vL2NZkLM&pp=0gcJCfwJAYcqIYzv",
-                       "key": 7
+                       "key": 10
 		},
 						/*=================================================================================*/
 		{
@@ -133,7 +183,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=grKwfI49b6M",
-                       "key": 8
+                       "key": 11
 		},
 						/*=================================================================================*/
 		{
@@ -147,7 +197,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=F3V9_IBNiLs",
-                       "key": 9
+                       "key": 12
 		},
 		/*=================================================================================*/
 		{
@@ -161,7 +211,21 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=JVH4_cvj56Y",
-                       "key": 10
+                       "key": 13
+		},
+		/*=================================================================================*/
+		{
+			"vids": [
+				
+			],
+			"name": "Fabrication",
+                       "author": "Ramxzs507",
+                       "more": "none",
+                       "id": 33983930,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/ZxIv6G80ybA?si=GVUYV926B7tQakuC",
+                       "key": 14
 		},
 
 /*=================================================================================*/
@@ -188,7 +252,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=9Jz5B3kE048&t=159s",
-                       "key": 11
+                       "key": 15
 		},
 
 /*=================================================================================*/
@@ -203,7 +267,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=Ybh94cdG-PI",
-                       "key": 12
+                       "key": 16
 		},
 
 /*=================================================================================*/
@@ -224,7 +288,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=H3uK_S3vfdA",
-                       "key": 13
+                       "key": 17
 		},
 
 /*=================================================================================*/
@@ -239,7 +303,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=Gtdz3JZBpfs",
-                       "key": 14
+                       "key": 18
 		},
 
 /*=================================================================================*/
@@ -254,7 +318,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=6Jmf5zYacBE",
-                       "key": 15
+                       "key": 19
 		},
 
 /*=================================================================================*/
@@ -269,7 +333,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=Yr6Z4Xjysh4",
-                       "key": 16
+                       "key": 20
 		},
 /*=================================================================================*/
 		{
@@ -283,7 +347,21 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://youtu.be/twEgZ0NnZ50?si=GH-lAqR9m5tzwV_T",
-                       "key": 17
+                       "key": 21
+		},
+/*=================================================================================*/
+		{
+			"vids": [
+				
+			],
+			"name": "ErebuS (Platnuu)",
+                       "author": "Ramxzs507",
+                       "more": "none",
+                       "id": 65860142,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/ZsCFosPX3D0?si=_hift_EDbBqIF2vh",
+                       "key": 22
 		},
 
 /*=================================================================================*/
@@ -303,7 +381,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=wwWdiR4LF3k",
-                       "key": 18
+                       "key": 23
 		},
 
 /*=================================================================================*/
@@ -318,7 +396,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=ekzDFtqQSWY",
-                       "key": 19
+                       "key": 24
 		},
 
 /*=================================================================================*/
@@ -342,6 +420,12 @@ var list = [
 				       "percent": 100,
 				       "hz": "60hz"
 					},
+					{
+				       "user": "Ramxzs507",
+				       "link": "https://youtu.be/updKNVvOSS0?si=7COUx_u0qOBiwPtX",
+				       "percent": 100,
+				       "hz": "320"
+					},
 			],
 			"name": "Athanatos",
                        "author": "Froxx",
@@ -350,7 +434,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=3nq2N3FQvs8",
-                       "key": 20
+                       "key": 25
 		},
 	/*=================================================================================*/
 		{
@@ -364,7 +448,21 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=UnD8iq2GzUs",
-                       "key": 21
+                       "key": 26
+		},
+	/*=================================================================================*/
+		{
+			"vids": [
+				
+			],
+			"name": "Curie",
+                       "author": "Ramxzs507",
+                       "more": "none",
+                       "id": 87816034,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/OwZoXDmSGQE?si=LI7TYyD-9Z2DV5FJ",
+                       "key": 27
 		},
 /*=================================================================================*/
 		{
@@ -378,7 +476,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=5EXCtQSu994",
-                       "key": 22
+                       "key": 28
 		},
 		/*=================================================================================*/
 		{
@@ -392,7 +490,21 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://youtu.be/4DmnTj0myNw",
-                       "key": 23
+                       "key": 29
+		},
+		/*=================================================================================*/
+		{
+			"vids": [
+				
+			],
+			"name": "Advaced Airstream",
+                       "author": "Ramxzs507",
+                       "more": "none",
+                       "id": 58088534,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/_UFqVi_tck0?si=gQ5gRNlkwA9dyiyP",
+                       "key": 30
 		},
 /*=================================================================================*/
 		{
@@ -412,7 +524,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=USRjl1yDjQ8",
-                       "key": 24
+                       "key": 31
 		},
 /*=================================================================================*/
 		{
@@ -426,7 +538,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=xjJnDJeceX8",
-                       "key": 25
+                       "key": 32
 		},
 /*=================================================================================*/
 		{
@@ -440,7 +552,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=8fhzKk5akqU",
-                       "key": 26
+                       "key": 33
 		},
 /*=================================================================================*/
 		{
@@ -454,7 +566,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=wlxu1zMkfwo",
-                       "key": 27
+                       "key": 34
 		},
 /*=================================================================================*/
 		{
@@ -468,12 +580,17 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=fKB10b9G_D8",
-                       "key": 28
+                       "key": 35
 		},
 /*=================================================================================*/
 		{
 			"vids": [
-				
+					{
+				       "user": "Ramxzs507",
+				       "link": "https://youtu.be/WdABIgiFiyQ?si=1A_vRKj1MqE4CRIn",
+				       "percent": 100,
+				       "hz": "240"
+					},
 			],
 			"name": "Gravity",
                        "author": "Froxx",
@@ -482,7 +599,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=OLmhAGWMmP4",
-                       "key": 29
+                       "key": 36
 		},
 		/*=================================================================================*/
 		{
@@ -496,7 +613,7 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://www.youtube.com/watch?v=jYCQROOEQRE",
-                       "legacykey": 0
+                       "key": 37
 		},
 		/*=================================================================================*/
 		{
@@ -539,9 +656,23 @@ var list = [
                        "pass": "Free to copy",
                        "percentToQualify": 100,
                        "verificationVid": "https://youtu.be/gibXHOdh3oM",
-                       "legacykey": 0
+                       "key": 38
 		},
 				/*=================================================================================*/
+		{
+			"vids": [
+				
+			],
+			"name": "Idols",
+                       "author": "Pirilupipis",
+                       "more": "none",
+                       "id": 48175126,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/rKvPkqSkI3E",
+                       "key": 39
+		},
+						/*=================================================================================*/
 		{
 			"vids": [
 					{
