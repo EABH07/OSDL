@@ -74,6 +74,63 @@ header { background: linear-gradient(90deg, #1a1a1a 0%, #8b0000 100%); border-bo
 .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
 .discord-btn { background: #5865F2; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
 body, header, .page, .user-card, #info { transition: background-color 0.3s ease, color 0.3s ease; }
+/* Estilo general de la lista para que las cards respiren */
+#list {
+    padding: 10px; /* Espacio interno para que las cards no peguen al borde */
+    background-color: var(--bg);
+}
+
+/* Las Cards de los niveles */
+.entry {
+    background: rgba(255, 255, 255, 0.03); /* Fondo sutil */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px !important; /* Esquinas muy redondeadas */
+    margin-bottom: 12px !important; /* Espaciado entre niveles */
+    padding: 15px !important;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.entry:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-2px); /* Efecto de levitación */
+    border-color: #5865F2; /* Color de acento al pasar el mouse */
+}
+
+.entry.selected {
+    background: rgba(88, 101, 242, 0.15) !important;
+    border-color: #5865F2 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tipografía minimalista dentro de la card */
+.entry p {
+    margin: 0;
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #fff;
+}
+
+.entry small {
+    display: block;
+    margin-top: 4px;
+    opacity: 0.6;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75em;
+}
+
+/* Titulos de secciones (List / Legacy) */
+.list-header {
+    padding: 10px 5px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #5865F2;
+    font-weight: 800;
+    margin-top: 10px;
+}
 </style>
 </head>
 
@@ -237,10 +294,8 @@ body, header, .page, .user-card, #info { transition: background-color 0.3s ease,
 </div>
 
 	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/auth.js"></script> <script src="js/userData.js"></script> ```
 	<script src="js/list.js"></script>
-	<script src="js/userData.js"></script>
-	<script src="js/auth.js"></script>
-
  <script>
     // 1. FUNCIONES MATEMÁTICAS (Indispensables para el Leaderboard)
     function roundNumber(num, scale) {
@@ -452,40 +507,52 @@ function load(index) {
 }
 
 // 5. INICIALIZACIÓN
-$(document).ready(function() {
+// --- NUEVA FUNCIÓN PARA DIBUJAR LA LISTA ---
+function renderMainList() {
     if (typeof list !== 'undefined') {
         const listContainer = $('#list');
+        listContainer.empty();
         
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        $('html').attr('data-theme', savedTheme);
-        $('#theme-toggle').text(savedTheme === 'dark' ? '🌙' : '☀️');
-        
-        listContainer.append('<div style="padding:15px; font-weight:bold; background:rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.1);">List</div>');
+        // Título minimalista para la lista principal
+        listContainer.append('<div class="list-header">Main List</div>');
         
         list.forEach((entry, index) => {
             if (entry.hasOwnProperty('key')) {
                 $(`<div class="entry" data-id="${index}">
                     <p>#${entry.key + 1} ${entry.name}</p>
-                    <small>${entry.author}</small>
+                    <small>by ${entry.author}</small>
                 </div>`).appendTo(listContainer);
             }
         });
 
-        listContainer.append('<div style="padding:15px; font-weight:bold; background:rgba(0,0,0,0.3); border-bottom:1px solid rgba(255,255,255,0.1);">Legacy List</div>');
+        // Título minimalista para Legacy
+        listContainer.append('<div class="list-header" style="margin-top:30px; opacity:0.5;">Legacy</div>');
         
         list.forEach((entry, index) => {
             if (entry.hasOwnProperty('legacykey')) {
-                $(`<div class="entry" data-id="${index}" style="opacity:0.7;">
+                $(`<div class="entry" data-id="${index}" style="opacity:0.6;">
                     <p>${entry.name}</p>
-                    <small>${entry.author}</small>
+                    <small>by ${entry.author}</small>
                 </div>`).appendTo(listContainer);
             }
         });
         
-        load(0);
+        // Cargar el primer nivel si existe
+        if($('.entry').length > 0) load(0);
     }
+}
 
-    // Buscador
+// --- CONFIGURACIÓN INICIAL AL CARGAR LA PÁGINA ---
+$(document).ready(function() {
+    // 1. Dibujar la lista por primera vez
+    renderMainList();
+
+    // 2. Configurar el tema
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    $('html').attr('data-theme', savedTheme);
+    $('#theme-toggle').text(savedTheme === 'dark' ? '🌙' : '☀️');
+
+    // 3. Buscador
     $('#levelSearch').on('input', function() {
         let val = $(this).val().toLowerCase();
         $('.entry[data-id]').each(function() {
@@ -493,12 +560,23 @@ $(document).ready(function() {
         });
     });
 
-    // Click en niveles
+    // 4. Click en niveles
     $(document).on('click', '.entry[data-id]', function() {
         load($(this).data('id'));
+        
+        // Scroll automático en móvil
+        if (window.innerWidth <= 800) {
+            const infoElement = document.getElementById('info');
+            if (infoElement) {
+                window.scrollTo({
+                    top: infoElement.offsetTop - 10, 
+                    behavior: 'smooth'
+                });
+            }
+        }
     });
 
-    // Toggle Tema
+    // 5. Toggle Tema
     $('#theme-toggle').click(function() {
         const currentTheme = $('html').attr('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -506,19 +584,7 @@ $(document).ready(function() {
         localStorage.setItem('theme', newTheme);
         $(this).text(newTheme === 'dark' ? '🌙' : '☀️');
     });
-	// Al final de la función load(index)
-if (window.innerWidth <= 800) {
-    const infoElement = document.getElementById('info');
-    if (infoElement) {
-        // Usamos offset para que no quede tan pegado arriba al bajar
-        window.scrollTo({
-            top: infoElement.offsetTop - 10, 
-            behavior: 'smooth'
-        });
-    }
-}
 });
-
 </script>
 </body>
 </html>
