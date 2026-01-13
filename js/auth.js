@@ -4,6 +4,44 @@ const USER_ID_MAP = {
     "Nani": "997611811140542566",
 	"Pirilupipis": "897605808366444554"
 };
+// Si 'list' ya existe (porque se cargó list.js), la dejamos como está. 
+// Si no existe, la creamos vacía.
+if (typeof window.list === 'undefined') {
+    window.list = []; 
+}
+
+async function loadLevels() {
+    try {
+        console.log("Intentando cargar niveles desde /levels...");
+        const responseIndex = await fetch('./levels/index.json');
+        if (!responseIndex.ok) return;
+
+        const levelNames = await responseIndex.json();
+        const loadPromises = levelNames.map(name => 
+            fetch(`./levels/${name}.json`).then(res => res.json())
+        );
+
+        const newLevels = await Promise.all(loadPromises);
+        
+        // Unimos Bloodbath a la lista principal
+        window.list = [...newLevels, ...window.list];
+        console.log("Bloodbath inyectado. Lista total:", window.list.length);
+
+        // Llamamos a la función del index para que refresque la pantalla
+        if (typeof renderMainList === 'function') {
+            renderMainList();
+        }
+
+    } catch (error) {
+        // Esta es la parte que te faltaba y por eso daba el SyntaxError
+        console.error("Error cargando niveles individuales:", error);
+    }
+}
+
+// Llamar a la carga cuando la página esté lista
+document.addEventListener('DOMContentLoaded', () => {
+    loadLevels();
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Sistema de Auth iniciado.");
