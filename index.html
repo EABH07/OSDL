@@ -97,10 +97,46 @@ body, header, .page, .user-card, #info { transition: background-color 0.3s ease,
             </a>
             
             <button id="theme-toggle" class="theme-btn">🌙</button>
+
+            <div id="discord-auth-zone">
+                <a id="login-discord" 
+                   href="https://discord.com/api/oauth2/authorize?client_id=1460373927942688770&redirect_uri=https%3A%2F%2Feabh07.github.io%2FOSDL%2F&response_type=token&scope=identify" 
+                   style="display: block; background: #5865F2; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 13px;">
+                   Login
+                </a>
+
+                <div id="user-profile" style="display: none; align-items: center; gap: 10px;">
+                    <div onclick="showProfile()" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                        <img id="user-avatar" src="" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid #5865f2; object-fit: cover;">
+                        <span id="user-name" style="color: white; font-weight: bold; font-size: 14px;"></span>
+                    </div>
+                    <button onclick="localStorage.clear(); location.reload();" style="background: #ed4245; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px;">
+                        Salir
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </header>
 
+<div id="MODAL-PERFIL" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 99999; align-items: center; justify-content: center; color: white;">
+    <div style="background: #23272a; width: 90%; max-width: 400px; padding: 25px; border-radius: 15px; border: 2px solid #5865f2; text-align: center; position: relative;">
+        
+        <button onclick="document.getElementById('MODAL-PERFIL').style.display='none'; document.body.style.overflow='auto';" 
+                style="position: absolute; top: 10px; right: 10px; background: #ed4245; color: white; border: none; border-radius: 5px; cursor: pointer; padding: 5px 10px; font-weight: bold;">
+            X
+        </button>
+
+        <img id="profile-big-avatar" src="" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid #5865f2; object-fit: cover;">
+        <h2 id="profile-big-name" style="margin: 10px 0;">---</h2>
+        <p id="profile-stats" style="opacity: 0.7; font-size: 14px;"></p>
+        
+        <div style="text-align: left; margin-top: 15px;">
+            <p style="border-bottom: 1px solid #444; padding-bottom: 5px; font-size: 12px; font-weight: bold; color: #5865f2;">MIS RÉCORDS:</p>
+            <div id="user-completed-list" style="max-height: 200px; overflow-y: auto;"></div>
+        </div>
+    </div>
+</div>
     <div id="main-content" class="page active">
         <div id="main-container">
             <div id="list"></div>
@@ -117,11 +153,43 @@ body, header, .page, .user-card, #info { transition: background-color 0.3s ease,
         </div>
     </div>
 
-    <div id="leaderboard-content" class="page">
-        <div class="container-leaderboard">
-            <h1 style="margin-bottom:20px;">Leaderboard</h1>
-            <div id="leaderboard-list"></div>
+<div id="leaderboard-content" class="page" style="display: none;">
+    <div class="container-leaderboard" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center; color: white; margin-bottom: 30px;">Top Jugadores OSDL</h1>
+        
+        <table style="width: 100%; border-collapse: collapse; color: white; background: #23272a; border-radius: 10px; overflow: hidden;">
+            <thead style="background: #5865f2;">
+                <tr>
+                    <th style="padding: 15px;">Puesto</th>
+                    <th style="padding: 15px; text-align: left;">Jugador</th>
+                    <th style="padding: 15px;">Completados</th>
+                    <th style="padding: 15px;">Puntos (Estimados)</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="MODAL-PERFIL" style="display: none; position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; background: rgba(0,0,0,0.95) !important; z-index: 2147483647 !important; overflow-y: auto; align-items: center; justify-content: center;">
+    <div style="max-width: 500px; width: 90%; margin: 60px auto; background: #23272a; padding: 30px; border-radius: 15px; border: 2px solid #5865f2; text-align: center; color: white; position: relative;">
+        
+        <button onclick="document.getElementById('MODAL-PERFIL').style.display='none'; document.body.style.overflow='auto';" 
+                style="position: absolute; top: 15px; right: 15px; background: #ed4245; color: white; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer;">✕</button>
+        
+        <img id="profile-big-avatar" src="" style="width: 100px; height: 100px; border-radius: 50%; border: 4px solid #5865f2; object-fit: cover; margin-bottom: 15px;">
+        <h1 id="profile-big-name" style="margin: 0; font-size: 28px;">---</h1>
+        <p id="profile-stats" style="color: #b9bbbe; margin: 10px 0 20px 0;"></p>
+        
+        <div style="text-align: left; background: #2f3136; padding: 20px; border-radius: 10px;">
+            <h3 style="margin-top: 0; border-bottom: 1px solid #444; padding-bottom: 10px; font-size: 16px;">Mis Récords</h3>
+            <div id="user-completed-list">
+                </div>
         </div>
+    </div>
+</div>
+</div>
     </div>
 	<div id="rules-content" class="page">
     <div class="container-rules" style="max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6;">
@@ -149,11 +217,29 @@ body, header, .page, .user-card, #info { transition: background-color 0.3s ease,
         </div>
     </div>
 </div>
+<div id="MODAL-PERFIL" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; align-items: center; justify-content: center; color: white; font-family: sans-serif;">
+    <div style="background: #18191c; width: 90%; max-width: 400px; padding: 25px; border-radius: 12px; border: 1px solid #5865f2; position: relative;">
+        
+        <button onclick="closeProfile()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #aaa; cursor: pointer; font-size: 20px;">✕</button>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img id="profile-big-avatar" src="" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #5865f2; object-fit: cover;">
+            <h2 id="profile-big-name" style="margin: 10px 0 5px 0;">Cargando...</h2>
+            <p id="profile-stats" style="font-size: 14px; color: #b9bbbe; margin: 0;"></p>
+        </div>
 
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/list.js"></script>
-    <script src="js/userData.js"></script>
-    <script src="js/sweetalert.min.js"></script>
+        <div style="border-top: 1px solid #333; padding-top: 15px;">
+            <span style="font-size: 12px; font-weight: bold; color: #5865f2; text-transform: uppercase;">Mis Récords</span>
+            <div id="user-completed-list" style="margin-top: 10px; max-height: 250px; overflow-y: auto;">
+                </div>
+        </div>
+    </div>
+</div>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/list.js"></script>
+	<script src="js/userData.js"></script>
+	<script src="js/auth.js"></script>
 
  <script>
     // 1. FUNCIONES MATEMÁTICAS (Indispensables para el Leaderboard)
@@ -174,20 +260,26 @@ body, header, .page, .user-card, #info { transition: background-color 0.3s ease,
     }
 
     // 2. NAVEGACIÓN
-    function showPage(pageId, btn) {
-    // 1. Ocultar todas las páginas
-    $('.page').removeClass('active-page').hide();
-    
-    // 2. Mostrar solo la seleccionada
-    $('#' + pageId).addClass('active-page').show();
-    
-    // 3. Manejar los botones
-    $('.nav-btn').removeClass('active');
-    $(btn).addClass('active');
+function showPage(pageId, btn) {
+    // 1. Oculta todas las páginas
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.style.display = 'none');
 
-    // 4. Si entramos al Leaderboard, renderizarlo
+    // 2. Muestra la página que pediste
+    const activePage = document.getElementById(pageId);
+    if (activePage) {
+        activePage.style.display = 'block';
+    }
+
+    // 3. Quitar clase active de los botones
+    const buttons = document.querySelectorAll('.nav-btn');
+    buttons.forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    // --- EL TRUCO ESTÁ AQUÍ ---
+    // Si la página que abrimos es la Leaderboard, ejecutamos el script automático
     if (pageId === 'leaderboard-content') {
-        renderLeaderboard();
+        updateLeaderboard(); 
     }
 }
 
@@ -426,6 +518,7 @@ if (window.innerWidth <= 800) {
     }
 }
 });
+
 </script>
 </body>
 </html>
