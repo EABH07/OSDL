@@ -138,3 +138,21 @@ iframe.vid { width: 100%; aspect-ratio: 16/9; border-radius: 10px; border: none;
 .nav-btn { background: none; border: none; padding: 10px; cursor: pointer; font-weight: bold; opacity: 0.6; }
 .nav-btn.active { opacity: 1; border-bottom: 2px solid var(--accent); }
 .theme-btn { background: none; border: none; cursor: pointer; font-size: 20px; }
+html { background-color: #121212 !important; } /* Usa el color de tu modo oscuro */
+
+#user-completed-list {
+    display: block !important;
+    min-height: 50px;
+    color: white !important; /* Fuerza el color de texto */
+    margin-top: 20px;
+}
+
+.record-entry {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid #5865F2 !important;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
