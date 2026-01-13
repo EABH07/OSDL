@@ -1,0 +1,56 @@
+		{
+			"vids": [
+				{
+				       "user": "Nani",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "Ender",
+				       "link": "https://www.youtube.com/watch?v=UuRb6TcfXDQ",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "Froxx",
+				       "link": "https://www.youtube.com/watch?v=ygszPTz3R8Y",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "OsiriZSH",
+				       "link": "https://www.youtube.com/watch?v=P0VX7fTzdrs",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "EABH",
+				       "link": "https://www.youtube.com/watch?v=Po5K8TincqU", 
+				       "percent": 100,
+				       "hz": "??hz",
+					   "discordID": "1165077788781461524" 
+					},
+					{
+				       "user": "7 meses",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+{
+				       "user": "NachTrax",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
+				       "percent": 100,
+				       "hz": "60hz"
+					}
+			],
+			"name": "Acu",
+			"author": "Pirilupipis",
+			"verifierDiscordID": "897605808366444554",
+			"more": "none",
+			"id": 61079355,
+			"pass": "Free to copy",
+			"percentToQualify": 100,
+			"verificationVid": "https://www.youtube.com/watch?v=x6HjZq98o2Y&t=32s",
+			"legacykey": 0 
+		}

@@ -1,0 +1,18 @@
+		{
+			"vids": [
+					{
+				       "user": "DavidBrawls",
+				       "link": "https://www.youtube.com/watch?v=gveSzOjx9iw",
+				       "percent": 100,
+				       "hz": "??hz"
+					}
+			],
+			"name": "Speedrun",
+                       "author": "Froxx",
+                       "more": "none",
+                       "id": 58507437,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=wwWdiR4LF3k",
+                       "key": 23
+		}

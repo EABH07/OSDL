@@ -1,0 +1,37 @@
+		{
+			"vids": [
+					{
+				       "user": "7 meses",
+				       "link": "https://www.youtube.com/watch?v=Jlr3n69l4YA",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "Nani",
+				       "link": "https://www.youtube.com/watch?v=rWNpiADn9ww",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "SleepyBaso",
+				       "link": "https://www.youtube.com/watch?v=MLThPSFUqYc&t=19s",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "Froxx",
+				       "link": "https://www.youtube.com/watch?v=T0slljfnboo",
+				       "percent": 100,
+				       "hz": "??hz"
+					}
+			],
+			"name": "Cataclysm",
+                       "author": "EABH",
+					   "verifierDiscordID": "1165077788781461524",
+                       "more": "none",
+                       "id": 3979721,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=dtkz09TfaPE",
+                       "legacykey": 0
+		}

@@ -1,0 +1,44 @@
+		{
+			"vids": [
+				{
+				       "user": "NineGhost21",
+				       "link": "https://www.youtube.com/watch?v=rRsPO72nlkM",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "SleepyBaso",
+				       "link": "https://www.youtube.com/watch?v=IHBkUCmNi8A&pp=ygUKc2xlZXB5YmFzbw%3D%3D",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "Pirilupipis",
+				       "link": "https://www.youtube.com/watch?v=KhsPhRHpJSk&t=3s",
+				       "percent": 100,
+				       "hz": "??hz",
+					   "discordID": "897605808366444554"
+					},
+					{
+				       "user": "DavidBrawls",
+				       "link": "https://www.youtube.com/watch?v=84sbSQxSLNs",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "7 meses",
+				       "link": "https://youtu.be/efk5rMKSViw",
+				       "percent": 100,
+				       "hz": "CBF"
+					}
+			],
+			"name": "Bloodbath",
+                       "author": "EABH",
+					   "verifierDiscordID": "1165077788781461524",
+                       "more": "none",
+                       "id": 10565740,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://youtu.be/gibXHOdh3oM",
+                       "key": 38
+		}

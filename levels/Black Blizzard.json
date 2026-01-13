@@ -1,0 +1,25 @@
+		{
+			"vids": [
+
+					{
+				       "user": "Ender",
+				       "link": "https://www.youtube.com/watch?v=158xmlEbP_Y",
+				       "percent": 100,
+				       "hz": "240hz"
+					},
+					{
+				       "user": "DavidBrawls",
+				       "link": "https://www.youtube.com/watch?v=BVIcs-yXbqA",
+				       "percent": 100,
+				       "hz": "??hz"
+					}
+			],
+			"name": "Black Blizzard",
+                       "author": "NineGhost21",
+                       "more": "none",
+                       "id": 34057654,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=9Jz5B3kE048&t=159s",
+                       "key": 15
+		}

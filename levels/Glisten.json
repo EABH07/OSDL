@@ -1,0 +1,25 @@
+		{
+			"vids": [
+					{
+				       "user": "OsiriZSH",
+				       "link": "https://www.youtube.com/watch?v=Oi68bkFT2fA",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "Froxx",
+				       "link": "https://www.youtube.com/watch?v=pxrLvzIWcrY&pp=0gcJCQYKAYcqIYzv",
+				       "percent": 100,
+				       "hz": "??hz"
+					}
+			],
+			"name": "Glisten",
+                       "author": "Pirilupipis",
+					   "verifierDiscordID": "897605808366444554",
+                       "more": "none",
+                       "id": 74924716,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=P9WGRbDgfRA",
+                       "legacykey": 0
+		}

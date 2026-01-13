@@ -1,0 +1,26 @@
+{
+	"vids": [
+		{
+			"user": "Froxx",
+			"link": "https://www.youtube.com/watch?v=L59r9F9-eck",
+			"percent": 100,
+			"hz": "??hz"
+		},
+		{
+			"user": "Pirilupipis",
+			"link": "https://www.youtube.com/watch?v=PSC9b68XIH0",
+			"percent": 100,
+			"hz": "??hz",
+			"discordID": "897605808366444554"
+		}
+	],
+	"name": "Niwa",
+	"author": "EABH",
+	"verifierDiscordID": "1165077788781461524",
+	"more": "none",
+	"id": 87425029,
+	"pass": "Free to copy",
+	"percentToQualify": 100,
+	"verificationVid": "https://www.youtube.com/watch?v=xAzaj3AicgI",
+	"legacykey": 0
+}

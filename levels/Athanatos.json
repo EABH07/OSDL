@@ -1,0 +1,36 @@
+		{
+			"vids": [
+					{
+				       "user": "DavidBrawls",
+				       "link": "https://youtu.be/3FIDKlmA6mE",
+				       "percent": 100,
+				       "hz": "165hz"
+					},
+					{
+				       "user": "NineGhost21",
+				       "link": "https://www.youtube.com/watch?v=ykUsh0GiATs",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "ImShadow",
+				       "link": "https://www.youtube.com/watch?v=KOYP70XC-Xg",
+				       "percent": 100,
+				       "hz": "60hz"
+					},
+					{
+				       "user": "Ramxzs507",
+				       "link": "https://youtu.be/updKNVvOSS0?si=7COUx_u0qOBiwPtX",
+				       "percent": 100,
+				       "hz": "320"
+					}
+			],
+			"name": "Athanatos",
+                       "author": "Froxx",
+                       "more": "none",
+                       "id": 26133601,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=3nq2N3FQvs8",
+                       "key": 25
+		}

@@ -1,0 +1,25 @@
+		{
+			"vids": [
+				{
+				       "user": "Froxx",
+				       "link": "https://www.youtube.com/watch?v=HFYj0LRNbPE",
+				       "percent": 100,
+				       "hz": "??hz"
+					},
+					{
+				       "user": "NachTrax",
+				       "link": "https://www.youtube.com/watch?v=xAzaj3AicgI",
+				       "percent": 100,
+				       "hz": "??hz"
+					}
+					
+			],
+			"name": "Interstellar Entropy",
+                       "author": "Pirilupipis",
+                       "more": "none",
+                       "id": 68578147,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=R6cOuY7UBEs",
+                       "legacykey": 0
+		}

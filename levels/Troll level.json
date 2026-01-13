@@ -1,0 +1,20 @@
+		{
+			"vids": [
+					{
+				       "user": "Froxx",
+				       "link": "https://www.youtube.com/watch?v=7wa1n1oaCNU",
+				       "percent": 100,
+				       "hz": "??hz"
+					}
+					
+			],
+			"name": "Troll level",
+                       "author": "Pirilupipis",
+					   "verifierDiscordID": "897605808366444554",
+                       "more": "none",
+                       "id": 76196489,
+                       "pass": "Free to copy",
+                       "percentToQualify": 100,
+                       "verificationVid": "https://www.youtube.com/watch?v=nUSpmpTPPDM&t=700s",
+                       "legacykey": 0
+		}
