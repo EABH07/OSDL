@@ -116,3 +116,14 @@ function getUserData(user) {
         color: 'var(--text)'
     });
 }
+// Esta función redibuja la lista de niveles en la página
+function renderLevelList() {
+    // Si tu motor usa una función llamada 'main' o 'load', la llamamos aquí.
+    if (typeof main === 'function') {
+        main();
+    } else {
+        // Si el código de la lista está suelto en el archivo, 
+        // lo más probable es que se ejecute al cargar.
+        // Por ahora, deja que auth.js intente llamar a main.
+    }
+}
