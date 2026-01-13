@@ -547,6 +547,7 @@ var list = [
 			],
 			"name": "Sakupen Hell",
                        "author": "EABH",
+					   "verifierDiscordID": "1165077788781461524",
                        "more": "none",
                        "id": 23262780,
                        "pass": "Free to copy",
@@ -634,7 +635,8 @@ var list = [
 				       "user": "Pirilupipis",
 				       "link": "https://www.youtube.com/watch?v=KhsPhRHpJSk&t=3s",
 				       "percent": 100,
-				       "hz": "??hz"
+				       "hz": "??hz",
+					   "discordID": "897605808366444554"
 					},
 					{
 				       "user": "DavidBrawls",
@@ -651,6 +653,7 @@ var list = [
 			],
 			"name": "Bloodbath",
                        "author": "EABH",
+					   "verifierDiscordID": "1165077788781461524",
                        "more": "none",
                        "id": 10565740,
                        "pass": "Free to copy",
@@ -665,6 +668,7 @@ var list = [
 			],
 			"name": "Idols",
                        "author": "Pirilupipis",
+					   "verifierDiscordID": "897605808366444554",
                        "more": "none",
                        "id": 48175126,
                        "pass": "Free to copy",
@@ -762,6 +766,7 @@ var list = [
 			],
 			"name": "Dismal duststrom",
                        "author": "Pirilupipis",
+					   "verifierDiscordID": "897605808366444554",
                        "more": "none",
                        "id": 89201076,
                        "pass": "Free to copy",
@@ -782,6 +787,7 @@ var list = [
 			],
 			"name": "Forbidden isle",
                        "author": "EABH",
+					   "verifierDiscordID": "1165077788781461524",
                        "more": "none",
                        "id": 63775846,
                        "pass": "Free to copy",
@@ -819,6 +825,7 @@ var list = [
 			],
 			"name": "Cataclysm",
                        "author": "EABH",
+					   "verifierDiscordID": "1165077788781461524",
                        "more": "none",
                        "id": 3979721,
                        "pass": "Free to copy",
@@ -844,6 +851,7 @@ var list = [
 			],
 			"name": "Glisten",
                        "author": "Pirilupipis",
+					   "verifierDiscordID": "897605808366444554",
                        "more": "none",
                        "id": 74924716,
                        "pass": "Free to copy",
@@ -864,11 +872,13 @@ var list = [
 				       "user": "Pirilupipis",
 				       "link": "https://www.youtube.com/watch?v=PSC9b68XIH0",
 				       "percent": 100,
-				       "hz": "??hz"
+				       "hz": "??hz",
+					   "discordID": "897605808366444554"
 					},
 			],
 			"name": "Niwa",
                        "author": "EABH",
+					   "verifierDiscordID": "1165077788781461524",
                        "more": "none",
                        "id": 87425029,
                        "pass": "Free to copy",
@@ -889,6 +899,7 @@ var list = [
 			],
 			"name": "Troll level",
                        "author": "Pirilupipis",
+					   "verifierDiscordID": "897605808366444554",
                        "more": "none",
                        "id": 76196489,
                        "pass": "Free to copy",
@@ -924,10 +935,11 @@ var list = [
 				       "hz": "??hz"
 					},
 					{
-				       "user": "Pirilupipis",
-				       "link": "https://www.youtube.com/watch?v=x6HjZq98o2Y&t=32s",
+				       "user": "EABH",
+				       "link": "https://www.youtube.com/watch?v=Po5K8TincqU", 
 				       "percent": 100,
-				       "hz": "??hz"
+				       "hz": "??hz",
+					   "discordID": "1165077788781461524" 
 					},
 					{
 				       "user": "7 meses",
@@ -943,12 +955,13 @@ var list = [
 					}
 			],
 			"name": "Acu",
-			"author": "EABH",
+			"author": "Pirilupipis",
+			"verifierDiscordID": "897605808366444554",
 			"more": "none",
 			"id": 61079355,
 			"pass": "Free to copy",
 			"percentToQualify": 100,
-			"verificationVid": "https://www.youtube.com/watch?v=Po5K8TincqU",
+			"verificationVid": "https://www.youtube.com/watch?v=x6HjZq98o2Y&t=32s",
 			"legacykey": 0 
 		}
 		
