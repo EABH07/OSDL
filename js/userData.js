@@ -63,7 +63,15 @@ function userList() {
                 var prog = [];
                 prog.push({map : entry.name.toString(), progress : entry2.percent.toString(), link : entry2.link, score : roundNumber(p,3), rank : i+1, hz : (entry2.hz != null ? entry2.hz : "144hz")});
 
-                user_data.push({name : entry2.user, highest : map, progress : prog, point : p, verified : []});
+               // Añadimos discordID al objeto del usuario si el récord lo tiene
+				user_data.push({
+					name : entry2.user, 
+					highest : map, 
+					progress : prog, 
+					point : p, 
+					verified : [],
+					discordID: entry2.discordID || null // <--- Nueva línea
+				});
             }
         }
     }
@@ -84,30 +92,27 @@ function userList() {
 
 function getUserData(user) {
     var user_data = userList();
-
     var progresses = '<ol>'; var clears = 0;
 
-    for (var i = 0 ; i < user_data[user].verified.length ; i++) {
-        rank = user_data[user].verified[i] - 1;
-        clears++;
-        progresses = progresses + '<li>' + list[rank].name + ' Verified </strong>(#'+(rank+1)+' / UP: '+roundNumber(getUserPoint(rank+1, 100, list[rank].percentToQualify, "144hz")*1, 3)+')<strong></a></li>'
-    }
+    // ... (deja el código de los bucles li igual) ...
 
-    for (var i = 0 ; i < user_data[user].progress.length ; i++) {
-        progresses = progresses + '<li><a href="'+user_data[user].progress[i].link+'" target="blank_">' + user_data[user].progress[i].map + ' ' + user_data[user].progress[i].progress + '% </strong>(#'+user_data[user].progress[i].rank+' / UP: '+user_data[user].progress[i].score+''+(parseInt(user_data[user].progress[i].hz.replace("hz", "")) >= 120 ? '' : ' / '+user_data[user].progress[i].hz)+')<strong></a></li>'
-        if (user_data[user].progress[i].progress == 100) {
-            clears++;
-        }
-    }
-    progresses = progresses + "</ol>"
+    // Buscamos si el usuario del leaderboard tiene un ID de Discord en sus registros
+    var hasID = false;
+    user_data[user].progress.forEach(record => {
+        // Buscamos en la lista original para ver si ese récord tiene ID
+        const level = list[record.rank - 1];
+        const vid = level.vids.find(v => v.user === user_data[user].name);
+        if(vid && vid.discordID) hasID = true;
+    });
 
     Swal.fire({
-        title : "#"+(user+1)+" : "+user_data[user].name,
+        title : "#"+(user+1)+" : "+user_data[user].name + (hasID ? " <span style='color:#5865F2; font-size:0.5em;'>[VINCULADO]</span>" : ""),
         html : '<center><strong>Score : '+user_data[user].point + '<br>'+
             'Best Record : '+user_data[user].highest+'<br>'+
             'Completed Levels : '+clears+' Level(s)<br>'+
             '<br>Record List : '+progresses+'<br>'+
-            '</strong></center>'
+            '</strong></center>',
+        background: 'var(--bg)',
+        color: 'var(--text)'
     });
-
 }
