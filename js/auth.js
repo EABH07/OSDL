@@ -12,31 +12,42 @@ if (typeof window.list === 'undefined') {
 
 async function loadLevels() {
     try {
-        console.log("Intentando cargar niveles desde /levels...");
         const responseIndex = await fetch('./levels/index.json');
-        if (!responseIndex.ok) return;
-
         const levelNames = await responseIndex.json();
-        const loadPromises = levelNames.map(name => 
-            fetch(`./levels/${name}.json`).then(res => res.json())
-        );
 
-        const newLevels = await Promise.all(loadPromises);
-        
-        // Unimos Bloodbath a la lista principal
-        window.list = [...newLevels, ...window.list];
-        console.log("Bloodbath inyectado. Lista total:", window.list.length);
+        // Creamos una lista temporal para no ir dibujando uno por uno
+        let tempList = [];
 
-        // Llamamos a la función del index para que refresque la pantalla
+        for (let i = 0; i < levelNames.length; i++) {
+            const name = levelNames[i];
+            try {
+                const res = await fetch(`./levels/${name}.json`);
+                if (!res.ok) continue;
+                const data = await res.json();
+                
+                // Asignamos el puesto basado en el orden del index.json
+                data.auto_rank = i + 1; 
+                tempList.push(data);
+            } catch (err) {
+                console.error("Error en el archivo " + name, err);
+            }
+        }
+
+        // Una vez que todos los archivos se procesaron, actualizamos la lista global
+        window.list = tempList;
+
+        // Ahora sí, llamamos a dibujar
         if (typeof renderMainList === 'function') {
             renderMainList();
         }
 
     } catch (error) {
-        // Esta es la parte que te faltaba y por eso daba el SyntaxError
-        console.error("Error cargando niveles individuales:", error);
+        console.error("Error cargando niveles:", error);
     }
 }
+
+// Ejecutar la carga al iniciar
+loadLevels();
 
 // Llamar a la carga cuando la página esté lista
 document.addEventListener('DOMContentLoaded', () => {
