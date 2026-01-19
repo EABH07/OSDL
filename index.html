@@ -509,50 +509,54 @@ function load(index) {
 // 5. INICIALIZACIÓN
 // --- NUEVA FUNCIÓN PARA DIBUJAR LA LISTA ---
 function renderMainList() {
-    if (typeof list !== 'undefined') {
-        const listContainer = $('#list');
-        listContainer.empty();
-        
-        // Título minimalista para la lista principal
-        listContainer.append('<div class="list-header">Main List</div>');
-        
-        list.forEach((entry, index) => {
-            if (entry.hasOwnProperty('key')) {
-                $(`<div class="entry" data-id="${index}">
-                    <p>#${entry.key + 1} ${entry.name}</p>
-                    <small>by ${entry.author}</small>
-                </div>`).appendTo(listContainer);
-            }
-        });
+    const listContainer = $('#list');
+    listContainer.empty();
 
-        // Título minimalista para Legacy
-        listContainer.append('<div class="list-header" style="margin-top:30px; opacity:0.5;">Legacy</div>');
-        
-        list.forEach((entry, index) => {
-            if (entry.hasOwnProperty('legacykey')) {
-                $(`<div class="entry" data-id="${index}" style="opacity:0.6;">
-                    <p>${entry.name}</p>
-                    <small>by ${entry.author}</small>
-                </div>`).appendTo(listContainer);
-            }
-        });
-        
-        // Cargar el primer nivel si existe
-        if($('.entry').length > 0) load(0);
+    if (typeof window.list === 'undefined' || window.list.length === 0) {
+        listContainer.append('<div style="padding:20px; opacity:0.5;">Cargando niveles...</div>');
+        return;
+    }
+
+    const MAX_MAIN_POS = 40; 
+
+    // 1. SECCIÓN MAIN LIST
+    listContainer.append('<div class="list-header">Main List</div>');
+    window.list.forEach((entry, index) => {
+        if (entry.auto_rank <= MAX_MAIN_POS) {
+            $(`<div class="entry" data-id="${index}">
+                <p>#${entry.auto_rank} ${entry.name}</p>
+                <small>by ${entry.author}</small>
+            </div>`).appendTo(listContainer);
+        }
+    });
+
+    // 2. SECCIÓN LEGACY
+    listContainer.append('<div class="list-header" style="margin-top:30px; opacity:0.5;">Legacy</div>');
+    window.list.forEach((entry, index) => {
+        if (entry.auto_rank > MAX_MAIN_POS) {
+            $(`<div class="entry" data-id="${index}" style="opacity:0.6;">
+                <p>${entry.name}</p>
+                <small>by ${entry.author}</small>
+            </div>`).appendTo(listContainer);
+        }
+    });
+
+    // IMPORTANTE: Solo cargar el primer nivel si ya se dibujaron las cards
+    if ($('.entry').length > 0) {
+        load(0);
     }
 }
-
 // --- CONFIGURACIÓN INICIAL AL CARGAR LA PÁGINA ---
 $(document).ready(function() {
-    // 1. Dibujar la lista por primera vez
-    renderMainList();
+    // NOTA: Quitamos renderMainList() de aquí. 
+    // Ahora auth.js se encarga de llamarlo cuando termine de cargar todos los JSON.
 
-    // 2. Configurar el tema
+    // 1. Configurar el tema
     const savedTheme = localStorage.getItem('theme') || 'dark';
     $('html').attr('data-theme', savedTheme);
     $('#theme-toggle').text(savedTheme === 'dark' ? '🌙' : '☀️');
 
-    // 3. Buscador
+    // 2. Buscador (Funciona dinámicamente)
     $('#levelSearch').on('input', function() {
         let val = $(this).val().toLowerCase();
         $('.entry[data-id]').each(function() {
@@ -560,11 +564,10 @@ $(document).ready(function() {
         });
     });
 
-    // 4. Click en niveles
+    // 3. Click en niveles
     $(document).on('click', '.entry[data-id]', function() {
         load($(this).data('id'));
         
-        // Scroll automático en móvil
         if (window.innerWidth <= 800) {
             const infoElement = document.getElementById('info');
             if (infoElement) {
@@ -576,7 +579,7 @@ $(document).ready(function() {
         }
     });
 
-    // 5. Toggle Tema
+    // 4. Toggle Tema
     $('#theme-toggle').click(function() {
         const currentTheme = $('html').attr('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
